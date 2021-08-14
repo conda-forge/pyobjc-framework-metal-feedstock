@@ -1,4 +1,4 @@
-{% set version = "7.2" %}
+{% set version = "7.3" %}
 {% set name = "pyobjc-framework-Metal" %}
 
 package:
@@ -8,13 +8,12 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8c81583d888ef988d29c2952f3bb7a036a3792484c2dc8cdeae3864a1238329d
+  sha256: 249d996476cee9e8762839b16d6fcfedd4acd3195fe1ef436aa6e3806177db37
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  # pyobjc-core didn't build for PY39 and I am tired of rebuilding it...
-  skip: true  # [(not osx) or py2k or python_impl == 'pypy' or (arm64 and py < 39) or (py == 39)]
+  skip: true  # [(not osx) or py2k or python_impl == 'pypy' or (arm64 and py < 39)]
 
 requirements:
   build:
@@ -43,7 +42,7 @@ about:
   license: MIT
   license_file: LICENSE.txt
   summary: Wrappers for the Metal framework on macOS
-  home: https://bitbucket.org/ronaldoussoren/pyobjc
+  doc_url: https://pyobjc.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
