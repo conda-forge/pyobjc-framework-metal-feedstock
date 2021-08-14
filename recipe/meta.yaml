@@ -13,7 +13,8 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [(not osx) or py2k or python_impl == 'pypy' or (arm64 and py < 39)]
+  # pyobjc-core didn't build for PY39 and I am tired of rebuilding it...
+  skip: true  # [(not osx) or py2k or python_impl == 'pypy' or (arm64 and py < 39) or (py == 39)]
 
 requirements:
   build:
