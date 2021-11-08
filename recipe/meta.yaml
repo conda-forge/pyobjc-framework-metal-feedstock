@@ -11,32 +11,37 @@ source:
   sha256: 249d996476cee9e8762839b16d6fcfedd4acd3195fe1ef436aa6e3806177db37
 
 build:
-  number: 0
+  number: 1
   script:
     # force pyobjc to use conda-forge's chosen SDK
     - export CFLAGS="${CFLAGS} -isysroot ${SDKROOT:-$CONDA_BUILD_SYSROOT}"
+    # force ignoring invalid compiler flag (-Wl,-export-dynamic)
+    - export CFLAGS="${CFLAGS} -Wno-unused-command-line-argument"  # [py == 37 or py == 38]
     - {{ PYTHON }} -m pip install . -vv
   skip: true  # [(not osx) or py2k or python_impl == 'pypy' or (arm64 and py < 39)]
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
     - pip
     - setuptools
+    - libffi
   run:
     - python
     - pyobjc-core ={{ version }}
     - pyobjc-framework-cocoa ={{ version }}
+    - libffi
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.11") }}  # [osx]
 
 test:
   requires:
     - pip
   commands:
-    - pip check
+    - python -c "import Metal; print(Metal.MTLCreateSystemDefaultDevice())"
   imports:
     - Metal
 
