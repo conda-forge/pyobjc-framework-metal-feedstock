@@ -1,5 +1,6 @@
 bot:
   automerge: true
+  check_solvable: true
 build_platform:
   osx_arm64: osx_64
 conda_forge_output_validation: true
