@@ -1,4 +1,4 @@
-{% set version = "8.5" %}
+{% set version = "9.1.1" %}
 {% set name = "pyobjc-framework-Metal" %}
 
 package:
@@ -8,10 +8,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: da7e20987ee087a6e7bf213305449b5b7345c8c55f3506b9e26a1b05215da679
+  sha256: d05b6caddeb4859b5560eaf006601a1e17b33fc83f4e773e94111b3c352f3531
 
 build:
-  number: 1
+  number: 0
   script:
     # force pyobjc to use conda-forge's chosen SDK
     - export CFLAGS="${CFLAGS} -isysroot ${SDKROOT:-$CONDA_BUILD_SYSROOT}"
