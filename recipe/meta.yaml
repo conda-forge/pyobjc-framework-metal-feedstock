@@ -6,7 +6,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: da7e20987ee087a6e7bf213305449b5b7345c8c55f3506b9e26a1b05215da679
 
@@ -51,3 +50,7 @@ about:
   license_file: LICENSE.txt
   summary: Wrappers for the Metal framework on macOS
   doc_url: https://pyobjc.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - xhochy
