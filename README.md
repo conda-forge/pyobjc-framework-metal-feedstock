@@ -1,11 +1,11 @@
-About pyobjc-framework-metal
-============================
+About pyobjc-framework-metal-feedstock
+======================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyobjc-framework-metal-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ronaldoussoren/pyobjc
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyobjc-framework-metal-feedstock/blob/main/LICENSE.txt)
 
 Summary: Wrappers for the Metal framework on macOS
 
