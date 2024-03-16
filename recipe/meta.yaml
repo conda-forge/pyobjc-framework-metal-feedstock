@@ -1,4 +1,4 @@
-{% set version = "10.1" %}
+{% set version = "10.2" %}
 {% set name = "pyobjc-framework-Metal" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bde76fe5d285c9c875d411a7cf6cdd7617559eabf4fb9a588f90762a0634148c
+  sha256: 652050cf9f5627dba36b31ad134e56c49040d0dcfaf93a7026018ef17330a01e
 
 build:
   number: 0
