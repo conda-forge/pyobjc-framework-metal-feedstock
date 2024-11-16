@@ -1,4 +1,4 @@
-{% set version = "10.2" %}
+{% set version = "10.3.1" %}
 {% set name = "pyobjc-framework-Metal" %}
 
 package:
@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 652050cf9f5627dba36b31ad134e56c49040d0dcfaf93a7026018ef17330a01e
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name.replace('-', '_').lower() }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
+  sha256: 495307db0bfd2063f28b7c8fa350af71afcfbf5f5f2186a6a751b4cb2ef46a1a
 
 build:
   number: 0
@@ -22,6 +22,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
@@ -34,7 +35,6 @@ requirements:
     - pyobjc-core ={{ version }}
     - pyobjc-framework-cocoa ={{ version }}
     - libffi
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.11") }}  # [osx]
 
 test:
   requires:
