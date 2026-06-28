@@ -10,7 +10,7 @@ source:
   sha256: cd362194bdb7fd2a9116b8dc1e6b14ce19629136304cdf6b88d105a969fda72c
 
 build:
-  number: 0
+  number: 1
   script:
     # force pyobjc to use conda-forge's chosen SDK
     - export CFLAGS="${CFLAGS} -isysroot ${SDKROOT:-$CONDA_BUILD_SYSROOT}"
