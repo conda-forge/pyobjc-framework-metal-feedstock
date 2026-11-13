@@ -12,7 +12,7 @@ source:
   sha256: be798a872021520701183f015f1b0fdadbc5ca74e4aee80d0c4952b890c90a7a
 
 build:
-  number: 1
+  number: 2
   skip: not osx
   script:
     # force pyobjc to use conda-forge's chosen SDK
