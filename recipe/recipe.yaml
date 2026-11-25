@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "13.0"
+  version: "13.1"
 
 package:
   name: pyobjc-framework-metal
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/p/pyobjc_framework_metal/pyobjc_framework_metal-${{ version }}.tar.gz
-  sha256: be798a872021520701183f015f1b0fdadbc5ca74e4aee80d0c4952b890c90a7a
+  sha256: cbd641d32eb43f731ff6b8a4575d3d4430410093d32322266802814732f3187b
 
 build:
-  number: 2
+  number: 0
   skip: not osx
   script:
     # force pyobjc to use conda-forge's chosen SDK
